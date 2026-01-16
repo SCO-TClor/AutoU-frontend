@@ -1,0 +1,373 @@
+@import url('https://fonts.googleapis.com/css2?family=Audiowide&family=Cinzel:wght@400..900&family=Gravitas+One&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Quantico:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+:root[data-theme='dark'] {
+    /* Structure */
+    --bg-dark:      hsl(0, 0%, 0%); 
+    --bg:           hsl(0, 0%, 5%);
+    --bg-light:     hsl(0, 0%, 10%);
+    /* Cards */
+    --cards:        hsl(0, 0%, 15%);
+    --cardsAccent:  hsl(0, 0%, 30%);
+    --superf:       hsl(0, 0%, 45%);
+    --divisor:      hsl(0, 0%, 95%);
+    /* Text */
+    --textMain:     hsl(0, 0%, 95%);
+    --textSec:      hsl(0, 0%, 70%);
+    --textDeb:      hsl(0, 0%, 60%);
+    /* Accent */
+    --border:       hsl(0, 0%, 30%);
+    --highlight:    hsl(0, 0%, 60%);
+    --gradient:       linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --border-card:  solid 1px var(--bg);
+    --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.07), 0px 4px 4px hsla(0, 0%, 0%, 0.15);
+}
+:root[data-theme='light'] {
+    /* Structure */
+    --bg-dark:      hsl(0, 0%, 100%); 
+    --bg:           hsl(0, 0%, 95%);
+    --bg-light:     hsl(0, 0%, 90%);
+    /* Cards */
+    --cards:        hsl(0, 0%, 85%);
+    --cardsAccent:  hsl(0, 0%, 70%);
+    --superf:       hsl(0, 0%, 55%);
+    --divisor:      hsl(0, 0%, 0%);
+    /* Text */
+    --textMain:     hsl(0, 0%, 5%);
+    --textSec:      hsl(0, 0%, 30%);
+    --textDeb:      hsl(0, 0%, 40%);
+    /* Accent */
+    --border:       hsl(0, 0%, 30%);
+    --highlight:    hsl(0, 0%, 100%);
+    --gradient:       linear-gradient(0deg, var(--bg) 95%, var(--bg-light));
+    --gradient-hover: linear-gradient(0deg, var(--bg), var(--bg-light));
+    --border-card:  solid 1px var(--bg);
+    --shadow: 0px 2px 2px hsla(0, 0%, 0%, 0.1), 0px 4px 4px hsla(0, 0%, 0%, 0.2);
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.text-montserrat {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+.text-cinzel {
+    font-family: "Cinzel", serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+.text-orbitron {
+  font-family: "Orbitron", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-style: normal;
+}
+body {
+    width: 100vw;
+    height: 100vh;
+    height: 100dvh;
+    background-color: var(--bg-dark);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0.5rem;
+    justify-content: center;
+    align-items: center;
+}
+
+section.email-class {
+    /* display: none; */
+    position: absolute;
+    z-index: 1;
+    width: clamp(300px, 70vw, 600px);
+    height: clamp(600px, 75vh, 800px);
+
+    text-align: center;
+    border-radius: 2rem 2rem;
+    
+    background: var(--gradient);
+    border-top: solid 1px var(--highlight);
+
+    box-shadow: 0 4px 0 0 var(--border);
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+
+    > button.email-closer {
+        position: absolute;
+        right: 1rem;
+        top: 1rem;
+        width: 40px;
+        aspect-ratio: 1 / 1;
+
+        border-radius: 2rem;
+
+        cursor: pointer;
+
+        background: var(--bg-light);
+        color: var(--textDeb);
+    }
+    > h1 {
+        color: var(--textSec);
+        margin: 3rem 0 1rem;
+        padding: 0 0 2rem;
+        border-bottom: solid 5px var(--bg-dark);
+    }
+    > h2 {
+        color: var(--textDeb);
+        margin: 1rem 0;
+    }
+    > h3 {
+        color: var(--textMain);
+    }
+    > div.email {
+        width: 100%;
+        height: 100%;
+        max-height: 340px;
+        overflow-y: auto;
+        font-weight: 600;
+
+        /* Formatação do email: */
+        white-space: pre-wrap;
+        word-break: break-word;
+        line-height: 1.6;
+        font-size: clamp(0.85rem, 2vw, 1rem);
+        text-align: left;
+        padding: 0.5rem;
+        
+        color: var(--textMain);
+        border-top: 2px solid var(--border);
+
+        &::-webkit-scrollbar {
+            width: 10px;
+        }
+        &::-webkit-scrollbar-thumb {
+            background-color: var(--textDeb);
+            border-radius: 2rem;
+            border: 2px solid transparent;
+            background-clip: padding-box;
+        }
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+    }
+}
+
+main {
+    border-radius: 2rem 2rem;
+    width: clamp(300px, 70vw, 70%);
+    height: clamp(400px, 70vh, 800px);
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    > input#themeChanger {
+        display: none;
+    }
+
+    > label.themeLabel {
+        position: absolute;
+        border-radius: 50%;
+        
+        cursor: pointer;
+        
+        width: 50px;
+        aspect-ratio: 1 / 1;
+        right: 2rem;
+        top: 1rem;
+        overflow: hidden;
+        align-content: center;
+
+        border: solid 2px var(--border);
+        border-top: var(--highlight);
+
+        background-color: hsl(from var(--bg) h s l);
+
+        transition: background-color 1s ease;
+
+        > div.themeChangerBox {
+            position: absolute;
+            background-color: #ffdd00;
+            box-shadow: 0 0 15px 5px #fff1b1;
+            transition: box-shadow 1s ease, background-color 1s ease;
+        }
+
+        > div.themeChangerCircle {
+            width: 1.3rem;
+            aspect-ratio: 1/1;
+            border-radius: 50%;
+            justify-self: center;
+            align-self: center;
+        }
+
+        > div.themeChangerMoon {
+            inset: 0;
+            position: absolute;
+            background-color: black;
+            box-shadow: 0 0 15px 1px #ffffff4e inset;
+            transition: box-shadow 0.4s ease;
+        }
+        
+        #divMoon.themeDefault {
+            transform: translate(200%, 50%);
+        }
+        #divMoon.themeMoonLight {
+            transform: translate(-200%, 50%);
+            transition: transform 1s ease, box-shadow 1s ease, background 1s ease;
+        }
+        #divMoon.themeMoonDark {
+            transform: translate(0, 0);
+            transition: transform 1s ease, box-shadow 1s ease, background 1s ease;
+        }
+    }
+
+    > div.logo-card {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: clamp(300px, 70vh, 100%);
+        padding: 2rem 0.5rem 1rem;
+        align-items: center;
+        border-radius: 2rem 2rem 0 0;
+        background-color: black;
+        color: white;
+
+        border-top: solid 1px var(--highlight);
+        box-shadow: 0 0 3px 1px var(--border);
+        
+        img {
+            width: 50%;
+        }
+    }
+    
+    > form.formulario {
+        flex: 1 1 0;
+        border-radius: 0 0 2rem 2rem;
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        width: clamp(300px, 70vh, 100%);
+        padding: 1rem;
+        position: relative;
+        text-align: center;
+        align-items: center;
+        
+        background: var(--gradient);
+        color: var(--textDeb);
+        box-shadow: 0 0 3px 1px var(--border);
+        
+        > textarea {
+            flex: 0 1 auto;
+            padding: 0.5rem;
+            padding-right: 1rem;
+            margin: 1rem 0;
+            border-radius: 1rem;
+            background-color: transparent;
+            color: var(--textMain);
+            font-size: 1.2rem;
+            outline: none;
+
+            min-height: 140px;
+            max-height: clamp(140px, 30vh, 200px);
+
+            width: clamp(250px, 70%, 85%);
+            min-width: 60%;
+            max-width: 90%;
+
+            &::-webkit-scrollbar {
+                width: 7px;
+                padding: 1rem;
+                margin-right: 1rem;
+            }
+            &::-webkit-scrollbar-thumb {
+                background-color: var(--textDeb);
+                border-radius: 1rem;
+                cursor: grab;
+                margin-right: 1rem;
+            }
+        }
+
+        > input#uploader {
+            display: none;
+        }
+
+        > label {
+            align-self: center;
+            margin: 1rem 0 3.5rem;
+            padding: 0.5rem 1.5rem;
+            border-radius: 1rem;
+            cursor: pointer;
+            
+            border: var(--border-card);
+            border-top: solid 1px var(--highlight);
+            background-color: var(--bg-light);
+            color: var(--textMain);
+            box-shadow: var(--shadow);
+
+            &:hover {
+                background: var(--gradient-hover);
+            }
+        }
+        
+        > div.selected-file {
+            position: absolute;
+            display: flex;
+            width: 50%;
+            padding: 0.5rem;
+            border-radius: 2rem;
+            align-items: center;
+            bottom: 1rem;
+            left: 1rem;
+            box-shadow: var(--shadow);
+            cursor: pointer;
+            
+            color: var(--textSec);
+            background-color: var(--bg-light);
+            border: var(--infoBg) 2px solid;
+            border-top: solid 1px var(--highlight);
+            
+            > div.file-name {
+                border-right: var(--divisor) 2px solid;
+                flex: 3 1 0;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                min-width: 0;
+            }
+            
+            > div.file-info {
+                flex: 2 1 0;
+            }
+        }
+
+        > button {
+            cursor: pointer;
+            position: absolute;
+            width: 36%;
+            padding: 0.5rem;
+            bottom: 1rem;
+            right: 1rem;
+            border-radius: 2rem;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-width: 0;
+
+            border: var(--border-card);
+            border-top: solid 1px var(--highlight);
+            background-color: var(--cards);
+            color: var(--textMain);
+            box-shadow: var(--shadow);
+
+            &:hover {
+                background: var(--gradient-hover);
+            }
+        }
+    }
+}

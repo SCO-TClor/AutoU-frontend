@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email processer</title>
+    <link rel="shortcut icon" href="./assets/AutoU_logo.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <main>
+        <input type="checkbox" name="tema" id="themeChanger">
+        <label for="themeChanger" class="themeLabel">
+            <div id="divSun" class="themeChangerBox themeChangerCircle"></div>
+            <div id="divMoon" class="themeChangerMoon themeChangerCircle"></div>
+        </label>
+        <div class="logo-card">
+            <img src="./assets/download.png" alt="AutoU image" draggable="false"><br>
+            <span class="text-cinzel">Processador de email</span>
+        </div>
+        <form class="formulario" id="form">
+            <span class="text-montserrat">Cole o email aqui:</span>
+            <textarea name="email_text" id="textarea-email" placeholder=""></textarea>
+
+            <span class="text-montserrat">OU envie um arquivo em formato txt ou pdf:</span>
+            <input type="file" accept=".txt,.pdf" name="file_uploader" id="uploader">
+            <label for="uploader" class="text-orbitron">
+                Escolher arquivo
+            </label>
+
+            <button type="submit" class="text-orbitron">
+                Send email
+            </button>
+        </form>
+    </main>
+    <script src="./script.js"></script>
+</body>
+</html>
