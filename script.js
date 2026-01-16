@@ -10,6 +10,7 @@ const divSun = document.getElementById('divSun');
 const divMoon = document.getElementById('divMoon');
 const root = document.documentElement;
 
+const loading = document.getElementById('loading');
 const body = document.querySelector('body');
 const email_exit = document.getElementById('email-exit');
 
@@ -30,6 +31,7 @@ function showEmailResponse(category, email) {
     const button = document.createElement('button');
     button.textContent = 'X';
     button.classList.add('email-closer');
+    button.classList.add('hover-gradient');
     button.id = 'email-exit';
 
     const h1 = document.createElement('h1');
@@ -141,6 +143,8 @@ form.addEventListener("submit", e => {
     };
 
     console.log('botao clicado!')
+    
+    loading.classList.remove('hidden');
 
     fetch('https://autou-backend-fxlt.onrender.com/email-process', {
         method: 'POST',
@@ -154,7 +158,8 @@ form.addEventListener("submit", e => {
             
             const categoria = data.data.category;
             const email = data.data.email
-
+            
+            loading.classList.add('hidden');
             deleteOldFile();
             showEmailResponse(categoria, email);
         })
