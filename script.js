@@ -142,7 +142,7 @@ form.addEventListener("submit", e => {
 
     console.log('botao clicado!')
 
-    fetch('http://127.0.0.1:8000/email-process', {
+    fetch('https://autou-backend-fxlt.onrender.com/email-process', {
         method: 'POST',
         body: formData
     })
