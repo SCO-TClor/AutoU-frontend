@@ -143,7 +143,7 @@ form.addEventListener("submit", e => {
     };
 
     console.log('botao clicado!')
-    
+
     loading.classList.remove('hidden');
 
     fetch('https://autou-backend-fxlt.onrender.com/email-process', {
@@ -164,6 +164,9 @@ form.addEventListener("submit", e => {
             showEmailResponse(categoria, email);
         })
         .catch(error => {
+            loading.classList.add('hidden');
+            deleteOldFile();
             console.log('Error!!!', error);
         });
+    return;
 });
